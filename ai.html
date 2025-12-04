@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kyuu||Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css"> </head>
+<body class="font-sans">
+
+    <div class="chat-container">
+        <div class="p-4 shadow-2xl text-white bg-gradient-to-r from-indigo-700 to-blue-500 flex justify-between items-center border-b border-indigo-500/30">
+            <button class="bg-yellow-400 text-gray-900 px-3 py-1 text-xs font-bold rounded-full hover:bg-yellow-300 transition duration-300 shadow-xl transform hover:scale-105">
+                💎 PREMIUM
+            </button>
+            <h1 class="text-2xl font-extrabold tracking-wider text-shadow">🤖 AI Triple Model</h1>
+            <button id="logo-button" class="text-xl text-yellow-300 hover:text-white transition duration-300 transform hover:scale-110">
+                <img src="/netlify/2103184ab2ca807b607056d4190f1ac3.png" alt="Logo" class="logo-img" /> 
+            </button>
+        </div>
+
+        <div id="chat-box" class="chat-box">
+            <div class="ai-message message-bubble bg-gray-700 text-gray-200 self-start rounded-bl-sm max-w-lg">
+                <span class="model-indicator text-cyan-400 block mb-1">~ SYSTEM</span>
+                Selamat datang! Pilih model di tombol Model di bawah. Siap untuk chat yang memuaskan!
+                <button class="copy-btn" onclick="copyMessage(this)">Salin</button>
+            </div>
+            
+        </div>
+
+        <div id="model-picker" class="model-picker hidden bg-gray-900 p-4 border-t border-gray-800 flex flex-wrap justify-center space-x-3 space-y-2">
+            </div>
+
+        <div class="p-4 border-t border-gray-800 flex flex-col bg-gray-900 shadow-2xl">
+            <div class="flex justify-center mb-3">
+                <button id="model-toggle-btn" 
+                        class="bg-indigo-700 text-white text-sm px-5 py-2 rounded-full hover:bg-indigo-600 transition duration-300 shadow-xl transform hover:scale-105">
+                    <span id="current-model-display">Model: GEMINI FLASH</span> <i class="fas fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+            
+            <div class="flex space-x-3">
+                <input type="text" id="user-input" placeholder="Tanyakan apa saja..."
+                        class="flex-grow p-4 border border-gray-700 rounded-full
+                                bg-gray-800 text-white placeholder-gray-500
+                                focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 input-glow"
+                        autocomplete="off">
+                <button id="send-btn"
+                        class="bg-cyan-500 text-white px-5 py-4 rounded-full hover:bg-cyan-600
+                                transition duration-300 disabled:bg-gray-600 disabled:cursor-not-allowed
+                                text-lg leading-none shadow-xl hover:shadow-cyan-500/50 transform hover:scale-105"
+                        disabled>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> </body>
+</html>

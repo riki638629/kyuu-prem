@@ -1,0 +1,92 @@
+/* BASE & LAYOUT */
+body { background-color: #0d121c; /* Lebih gelap dari Gray-900 */ }
+.chat-container {
+    display: flex; flex-direction: column; width: 100vw; height: 100vh;
+    background: linear-gradient(180deg, #111827 0%, #0d121c 100%);
+}
+.chat-box {
+    flex-grow: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; padding: 1.5rem;
+}
+
+/* SCROLLBAR ELEGANCE */
+.chat-box::-webkit-scrollbar { width: 6px; }
+.chat-box::-webkit-scrollbar-thumb { background-color: #3f51b5; border-radius: 10px; } /* Indigo */
+.chat-box::-webkit-scrollbar-track { background: #1f2937; }
+
+/* ANIMATION FOR MODEL PICKER */
+.model-picker {
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+.model-picker.hidden {
+    max-height: 0; padding-top: 0; padding-bottom: 0; overflow: hidden;
+}
+.model-picker:not(.hidden) {
+    max-height: 150px; 
+    padding-top: 1rem; padding-bottom: 1rem;
+}
+
+/* CUSTOM GLOW ON FOCUS */
+.input-glow:focus {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.4); /* Blue/Cyan glow */
+    border-color: #3b82f6;
+}
+
+/* Message Styling Refinement */
+.message-bubble {
+    padding: 12px 18px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    font-size: 15px;
+    position: relative; /* Untuk posisi tombol copy */
+}
+.ai-message .model-indicator {
+    font-size: 0.65rem;
+}
+
+/* Styling untuk kode */
+.code-block {
+    background-color: #1f2937; /* Darker than bubble */
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+    white-space: pre-wrap; /* Pastikan baris baru dihormati */
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Tombol Copy */
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s, background-color 0.3s;
+}
+
+.ai-message:hover .copy-btn {
+    opacity: 1;
+}
+
+.copy-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Logo/Image Styling */
+.logo-img {
+    width: 32px; /* Ditingkatkan dari 24px ke 32px */
+    height: 32px; /* Ditingkatkan dari 24px ke 32px */
+    object-fit: contain;
+}
+
+/* Menambahkan padding agar gambar yang lebih besar tidak terpotong */
+#logo-button {
+     padding: 4px; 
+     line-height: 0; /* Menghilangkan spasi vertikal ekstra */
+}
